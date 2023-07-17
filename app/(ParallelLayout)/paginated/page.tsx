@@ -12,6 +12,7 @@ interface Post {
 }
 
 const getPosts = async ({ queryKey }: QueryFunctionContext) => {
+  console.log("queryKey====", queryKey);
   const { data } = await axios.get<Post[]>(
     `http://localhost:3065/posts?_limit=2&_page=${queryKey[1]}`
   );
@@ -24,7 +25,7 @@ export default function Paginated() {
     ["paginated", page],
     getPosts,
     {
-      keepPreviousData: true,
+      keepPreviousData: true, // 새로운 데이터를 가져오기전까지 이전 데이터캐시를 유지해 준다.
     }
   );
   return (

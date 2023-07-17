@@ -14,6 +14,7 @@ export default function MainLayout({
         <Link href="/dependent">디펜던트</Link>
         <Link href="/paginated">페이지네이트</Link>
         <Link href="/infinite">인피니트</Link>
+        <Link href="/todos">뮤테이션</Link>
       </div>
       {children}
     </>

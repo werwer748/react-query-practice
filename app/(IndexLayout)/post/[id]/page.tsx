@@ -24,7 +24,7 @@ export default function PostDetail<NextPage extends unknown>() {
   const { id: postId } = params;
   console.log("useParams로 뽑은 id", postId);
 
-  const queryClient = useQueryClient();
+  const queryClient = useQueryClient(); // 홈에서 생성된(?) queryClient를 가져온다.
 
   const { data: post, isLoading } = useQuery<Post, Error>(
     ["post", postId],
